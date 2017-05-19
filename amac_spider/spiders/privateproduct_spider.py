@@ -14,7 +14,7 @@ from scrapy.selector import Selector
 from scrapy.http import Request
 from scrapy.http import FormRequest
 from scrapy.utils.response import open_in_browser
-from private_product_spider.items import Productmeta
+from amac_spider.items import Productmeta
 
 reload(sys)
 sys.setdefaultencoding("utf8")
@@ -36,7 +36,7 @@ class PrivateProductSpider(scrapy.Spider):
             "x-requested-with": "XMLHttpRequest"
         },
         "ITEM_PIPELINES": {
-            "private_product_spider.pipelines.PrivateProductSpiderPipeline": 100
+            "amac_spider.pipelines.PrivateProductSpiderPipeline": 100
         }
     }
     is_first_request = True

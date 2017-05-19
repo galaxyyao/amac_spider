@@ -34,3 +34,30 @@ class PrivateProductSpiderPipeline(object):
                 [RN, MPI_ID, CPBM, CPMC, GLJG, SLRQ, DQR, TZLX, SFFJ, GLFS, CLGM, CLSCYHS, TGJG,
                  FEDJJG, TZFW])
         return item
+
+
+class PrivateFundSpiderPipeline(object):
+    def process_item(self, item, spider):
+        fundId = item['fundId']
+        fundName = item['fundName']
+        fundCode = item['fundCode']
+        setupDate = item['setupDate']
+        recordDate = item['recordDate']
+        recordStep = item['recordStep']
+        fundType = item['fundType']
+        currency = item['currency']
+        managerName = item['managerName']
+        manageType = item['manageType']
+        trusteeName = item['trusteeName']
+        investArea = item['investArea']
+        status = item['status']
+        lastModifiedTime = item['lastModifiedTime']
+        specialSuggest = item['specialSuggest']
+
+        with open('fund_list.csv', 'ab+') as csv_file:
+            csv_file.write(codecs.BOM_UTF8)
+            writer = csv.writer(csv_file, delimiter=',')
+            writer.writerow(
+                [fundName, fundCode, setupDate,recordDate,recordStep,fundType,currency,
+                 managerName,manageType,trusteeName,investArea,status,lastModifiedTime,specialSuggest,fundId])
+        return item
