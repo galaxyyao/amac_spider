@@ -1,10 +1,10 @@
 # amac private fund & product spider
 scrapy spider for http://www.amac.org.cn/xxgs/
 
-private fund: 私募基金公示
+private product: 私募产品备案信息公示
 页面：http://ba.amac.org.cn/pages/amacWeb/web-list.html
 
-private product: 私募产品备案信息公示
+private fund: 私募基金公示
 页面：http://gs.amac.org.cn/amac-infodisc/res/pof/fund/index.html
 
 私募基金爬取的时候使用到了selenium+PhantomJS
